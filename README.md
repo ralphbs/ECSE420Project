@@ -1,5 +1,7 @@
 # ECSE420Project
 
+Make sure both node and npm are installed on your machines.
+
 Clone the repository:
 
 ```

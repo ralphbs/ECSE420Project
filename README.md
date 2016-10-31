@@ -20,10 +20,18 @@ Install dependencies:
 npm install
 ```
 
-Run program:
+Run REST API program:
 
 ```
 node search.js
+```
+
+OR
+
+Run Stream API program:
+
+```
+node stream.js
 ```
 
 To filter tweets using certain parameters, check out https://dev.twitter.com/rest/reference/get/search/tweets that displays all the options you can have in the request.

@@ -8,6 +8,12 @@ Clone the repository:
 git clone https://github.com/ralphbs/ECSE420Project
 ```
 
+Go to the directory:
+
+```
+cd ECSE420Project
+```
+
 Install dependencies:
 
 ```

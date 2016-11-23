@@ -1,17 +1,19 @@
-import socket;
-import re;
-count = 0
+import paramiko
 
 def is_ssh_reachable(hostname):
-	sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-	sock.settimeout(1)
 	result = 1
+	client = paramiko.SSHClient()
+	client.load_system_host_keys()
+	client.set_missing_host_key_policy(paramiko.AutoAddPolicy()) #avoid unknown hostkey error
+	paramiko.util.log_to_file("filename.log")
 	try:
-		result = sock.connect_ex((hostname,22))
+		client.connect(hostname, timeout = 1)
+	except paramiko.ssh_exception.AuthenticationException as e:
+		result = 0
 	except:
 		print "Exception when connecting to host " + hostname
 	finally:
-		sock.close()
+		client.close()
 		return result	
 		
 with open("HostList.txt") as f:
@@ -25,6 +27,3 @@ for hostname in hostname_list:
 		output.write(hostname+'\n')
 print "Reachable hosts count: " + str(count)
 output.close()
-   
-
-	

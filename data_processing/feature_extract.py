@@ -51,7 +51,9 @@ if __name__ == "__main__":
 
         counter = SentimentCounter()
 
-        for line in f:
+        lines = f.readlines()
+        start = time.time()
+        for line in lines:
             count += 1
 
             new_data = json.loads(line)
@@ -61,3 +63,5 @@ if __name__ == "__main__":
                 break
 
         counter.summarize()
+        if rank == 0:
+            print "Took %s second." % (time.time() - start)

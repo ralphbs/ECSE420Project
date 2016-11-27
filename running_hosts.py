@@ -24,6 +24,6 @@ for hostname in hostname_list:
 	hostname = hostname.strip('\n')
 	if (is_ssh_reachable(hostname) == 0):
 		count += 1
-		output.write(hostname+'\n')
+		output.write(hostname+ ' slots=4\n')
 print "Reachable hosts count: " + str(count)
 output.close()

@@ -1,7 +1,6 @@
 import sys
 import json
 import time
-import tarfile
 import textblob
 
 class SentimentCounter(object):

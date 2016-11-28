@@ -1,3 +1,4 @@
+Sum is 5075.01203592 and count is 158908. On average it is 0.0319367938425.
 
 1 host          Time (s)
 ========================
